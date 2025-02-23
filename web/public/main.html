@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Gestión de Puntos de Interés - Museos</title>
+    <!-- Estilos de Leaflet -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <!-- Nuestro CSS -->
+    <link rel="stylesheet" href="stylesheets/style.css">
+</head>
+
+<body>
+    <div id="appSection">
+        <h1>Gestión de Puntos de Interés - Museos</h1>
+
+        <!-- Contenedor para el mapa -->
+        <div id="mapContainer">
+            <div id="map"></div>
+        </div>
+
+        <!-- Filtro por categoría -->
+        <h3>Filtrar por categoría</h3>
+        <select id="categoryFilter">
+            <option value="">Todas</option>
+            <option value="Arte">Arte</option>
+            <option value="Historia">Historia</option>
+            <!-- Otras categorías según necesites -->
+        </select>
+
+        <!-- Botón para buscar el museo más cercano -->
+        <button id="nearestBtn">Mostrar museo más cercano</button>
+        <div id="nearestInfo"></div>
+
+        <!-- Formulario para agregar/editar museos -->
+        <h3 id="formTitle">Agregar Museo</h3>
+        <form id="pointForm">
+            <input type="hidden" id="pointId">
+            <input type="text" id="title" placeholder="Título" required>
+            <textarea id="description" placeholder="Descripción" required></textarea>
+            <input type="number" id="lat" placeholder="Latitud" step="any" required>
+            <input type="number" id="lng" placeholder="Longitud" step="any" required>
+            <input type="text" id="image" placeholder="URL de la imagen" required>
+            <input type="text" id="category" placeholder="Categoría" required>
+            <button type="submit">Guardar</button>
+            <button type="button" id="cancelEdit" class="hidden">Cancelar</button>
+        </form>
+
+        <!-- Listado de Museos -->
+        <h3>Listado de Museos</h3>
+        <ul id="pointsList"></ul>
+        <button id="logoutBtn">Cerrar sesión</button>
+    </div>
+
+    <!-- Scripts: Leaflet y nuestro JS -->
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <script src="scripts/main.js"></script>
+</body>
+
+</html>
